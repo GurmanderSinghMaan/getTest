@@ -23,7 +23,7 @@ jobs:
           key: cache-9abf99d
 
       - name: prime-cache-9abf99d
-        run: echo "Cache result: ${{ steps.cache.outputs.cache-hit }}"
+        run: echo "Cache result: ${{ steps.cache.outputs.cache-hit == 'true' && 'hit' || 'miss' }}"
 
       - name: Set up Python
         uses: actions/setup-python@v5
